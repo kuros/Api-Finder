@@ -1,8 +1,10 @@
 package com.github.kuros.api.finder.model;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class ApiResponse {
@@ -12,13 +14,10 @@ public class ApiResponse {
     private Set<String> urls;
     private List<Param> pathVariables;
     private List<Param> requestParam;
-    private Object requestBody;
-    private boolean inValid;
-    private boolean responseArray;
+    private Map<String, ?> requestBody;
+    private boolean array;
 
     public ApiResponse() {
-        pathVariables = Lists.newArrayList();
-        requestParam = Lists.newArrayList();
     }
 
     public String getDescription() {
@@ -37,14 +36,6 @@ public class ApiResponse {
         this.requestType = requestType;
     }
 
-    public Set<String> getUrls() {
-        return urls;
-    }
-
-    public void setUrl(final Set<String> url) {
-        this.urls = urls;
-    }
-
     public List<Param> getPathVariables() {
         return pathVariables;
     }
@@ -61,27 +52,27 @@ public class ApiResponse {
         this.requestParam = requestParam;
     }
 
-    public Object getRequestBody() {
+    public Set<String> getUrls() {
+        return urls;
+    }
+
+    public Map<String, ?> getRequestBody() {
         return requestBody;
     }
 
-    public void setRequestBody(final Object requestBody) {
+    public void setRequestBody(final Map<String, ?> requestBody) {
         this.requestBody = requestBody;
     }
 
-    public boolean isInValid() {
-        return inValid;
+    public void setUrls(final Set<String> urls) {
+        this.urls = urls;
     }
 
-    public void setInValid(final boolean inValid) {
-        this.inValid = inValid;
+    public boolean isArray() {
+        return array;
     }
 
-    public boolean isResponseArray() {
-        return responseArray;
-    }
-
-    public void setResponseArray(final boolean responseArray) {
-        this.responseArray = responseArray;
+    public void setArray(final boolean array) {
+        this.array = array;
     }
 }

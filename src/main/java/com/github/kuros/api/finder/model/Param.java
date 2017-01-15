@@ -1,22 +1,24 @@
 package com.github.kuros.api.finder.model;
 
-public class Param {
-    private String type;
-    private Object value;
+import com.github.kuros.api.finder.config.BasicType;
 
-    public String getType() {
+public class Param {
+    private String key;
+    private BasicType type;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(final String key) {
+        this.key = key;
+    }
+
+    public BasicType getType() {
         return type;
     }
 
-    public void setType(final String type) {
+    public void setType(final BasicType type) {
         this.type = type;
-    }
-
-    public Object getValue() {
-        return value;
-    }
-
-    public void setValue(final Object value) {
-        this.value = value;
     }
 }
